@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A-Frame Audio</title>
+  <link rel="stylesheet" type="text/css" href="public/styles/inline.css">
+
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="icon" type="image/ico" href="public/assets/icons/favicon.ico"/>
+
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="A-Frame Audio">
+  <link rel="apple-touch-icon" href="public/assets/icons/icon-128x128.png">
+  
+  <meta name="msapplication-TileImage" content="public/assets/icons/icon-128x128.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">  
+  
+  <script src="public/js/aframe.min.js"></script>
+  <script src="public/js/script.js"></script>
+
+  <script src='https://surikov.github.io/webaudiofont/npm/dist/WebAudioFontPlayer.js'></script>
+  <script src='https://surikov.github.io/webaudiofontdata/sound/12835_17_JCLive_sf2_file.js'></script>
+  <script src='https://surikov.github.io/webaudiofontdata/sound/12840_1_JCLive_sf2_file.js'></script>
+  <script src='https://surikov.github.io/webaudiofontdata/sound/12842_1_JCLive_sf2_file.js'></script>
+  <script src='https://surikov.github.io/webaudiofontdata/sound/12851_1_JCLive_sf2_file.js'></script>
+  <script src='https://surikov.github.io/webaudiofontdata/sound/12850_1_JCLive_sf2_file.js'></script>
+  <script src='https://surikov.github.io/webaudiofontdata/sound/12848_1_JCLive_sf2_file.js'></script>
+  <script src='https://surikov.github.io/webaudiofontdata/sound/12841_1_JCLive_sf2_file.js'></script>
+  <script>
+    var AudioContextFunc = window.AudioContext || window.webkitAudioContext;
+    var audioContext = new AudioContextFunc();
+    var player=new WebAudioFontPlayer();
+    player.loader.decodeAfterLoading(audioContext, '_drum_35_17_JCLive_sf2_file');
+    player.loader.decodeAfterLoading(audioContext, '_drum_40_1_JCLive_sf2_file');
+    player.loader.decodeAfterLoading(audioContext, '_drum_42_1_JCLive_sf2_file');
+    player.loader.decodeAfterLoading(audioContext, '_drum_51_1_JCLive_sf2_file');
+    player.loader.decodeAfterLoading(audioContext, '_drum_50_1_JCLive_sf2_file');
+    player.loader.decodeAfterLoading(audioContext, '_drum_48_1_JCLive_sf2_file');
+    player.loader.decodeAfterLoading(audioContext, '_drum_41_1_JCLive_sf2_file');
+  </script>
+</head>
+<body>
+  <!-- MENUBAR -->
+  <header class="header">
+    <h1 class="header__title">A-Frame Audio</h1>
+    <button id="butQRCode" class="butQRCode headerButton" title="Get page QR code"></button>
+  </header>
+
+  <!-- CONTENT CONTAINERS -->
+
+  <div id="loaderDiv" class="dialog-container make-container--visible">
+    <img class="loader" src="public/assets/icons/loader.gif" />
+  </div>
+
+  <div id="qrCodeDiv" class="dialog-container">
+    <span id="closeQRCode" class="small close rounded heavy"></span>
+    <div id="qrcode"></div>
+  </div>
+
+  <!-- A-FRAME ELEMENTS -->
+
+  <a-scene fog="color: #bc483e; near: 0; far: 65;">
+    <a-entity aframe-audio="soundName : _drum_35_17_JCLive_sf2_file, soundFile : 12835_17_JCLive_sf2_file.js">
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+    </a-entity>
+    <a-sky color="#3f51b5"></a-sky>
+  </a-scene>
+
+  <!-- SCRIPTS -->
+
+  <script src="public/js/qrcode.js"></script>
+  <script src="public/js/ui-script.js"></script>
+</body>
+</html>
