@@ -21,29 +21,9 @@
   <meta name="msapplication-TileImage" content="public/assets/icons/icon-128x128.png">
   <meta name="msapplication-TileColor" content="#2F3BA2">  
   
-  <script src="public/js/aframe.min.js"></script>
-  <script src="public/js/script.js"></script>
-
+  <script src="public/js/aframe.js"></script>
   <script src='https://surikov.github.io/webaudiofont/npm/dist/WebAudioFontPlayer.js'></script>
-  <script src='https://surikov.github.io/webaudiofontdata/sound/12835_17_JCLive_sf2_file.js'></script>
-  <script src='https://surikov.github.io/webaudiofontdata/sound/12840_1_JCLive_sf2_file.js'></script>
-  <script src='https://surikov.github.io/webaudiofontdata/sound/12842_1_JCLive_sf2_file.js'></script>
-  <script src='https://surikov.github.io/webaudiofontdata/sound/12851_1_JCLive_sf2_file.js'></script>
-  <script src='https://surikov.github.io/webaudiofontdata/sound/12850_1_JCLive_sf2_file.js'></script>
-  <script src='https://surikov.github.io/webaudiofontdata/sound/12848_1_JCLive_sf2_file.js'></script>
-  <script src='https://surikov.github.io/webaudiofontdata/sound/12841_1_JCLive_sf2_file.js'></script>
-  <script>
-    var AudioContextFunc = window.AudioContext || window.webkitAudioContext;
-    var audioContext = new AudioContextFunc();
-    var player=new WebAudioFontPlayer();
-    player.loader.decodeAfterLoading(audioContext, '_drum_35_17_JCLive_sf2_file');
-    player.loader.decodeAfterLoading(audioContext, '_drum_40_1_JCLive_sf2_file');
-    player.loader.decodeAfterLoading(audioContext, '_drum_42_1_JCLive_sf2_file');
-    player.loader.decodeAfterLoading(audioContext, '_drum_51_1_JCLive_sf2_file');
-    player.loader.decodeAfterLoading(audioContext, '_drum_50_1_JCLive_sf2_file');
-    player.loader.decodeAfterLoading(audioContext, '_drum_48_1_JCLive_sf2_file');
-    player.loader.decodeAfterLoading(audioContext, '_drum_41_1_JCLive_sf2_file');
-  </script>
+  <script src="public/js/script.js"></script>  
 </head>
 <body>
   <!-- MENUBAR -->
@@ -65,10 +45,29 @@
 
   <!-- A-FRAME ELEMENTS -->
 
-  <a-scene fog="color: #bc483e; near: 0; far: 65;">
-    <a-entity aframe-audio="soundName : _drum_35_17_JCLive_sf2_file, soundFile : 12835_17_JCLive_sf2_file.js">
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+  <a-scene >
+    <a-entity camera look-controls position="0 2.5 0">
+      <a-entity cursor="fuse: true; fuseTimeout: 500"
+                position="0 0 -1"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                material="color: black; shader: flat">
+      </a-entity>
     </a-entity>
+
+      <a-box aframe-audio="soundName : _drum_35_17_JCLive_sf2_file; soundFile : 12835_17_JCLive_sf2_file.js"
+        position="-3 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-box aframe-audio="soundName : _drum_40_1_JCLive_sf2_file; soundFile : 12840_1_JCLive_sf2_file.js"
+        position="-2 0.5 -3.5" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-box aframe-audio="soundName : _drum_42_1_JCLive_sf2_file; soundFile : 12842_1_JCLive_sf2_file.js"
+        position="-1 0.5 -4" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-box aframe-audio="soundName : _drum_51_1_JCLive_sf2_file; soundFile : 12851_1_JCLive_sf2_file.js"
+        position="0 0.5 -4.5" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-box aframe-audio="soundName : _drum_50_1_JCLive_sf2_file; soundFile : 12850_1_JCLive_sf2_file.js"
+        position="1 0.5 -4" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-box aframe-audio="soundName : _drum_48_1_JCLive_sf2_file; soundFile : 12848_1_JCLive_sf2_file.js"
+        position="2 0.5 -3.5" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-box aframe-audio="soundName : _drum_41_1_JCLive_sf2_file; soundFile : 12841_1_JCLive_sf2_file.js"
+        position="3 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
     <a-sky color="#3f51b5"></a-sky>
   </a-scene>
 
